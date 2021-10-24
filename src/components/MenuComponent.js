@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DishdetailComponent from "./DishdetailComponent";
 import {
   Card,
   CardImg,
@@ -22,16 +23,7 @@ class Menu extends Component {
   }
 
   renderDish(dish) {
-    if (dish != null)
-      return (
-        <Card>
-          <CardImg top src={dish.image} alt={dish.name} />
-          <CardBody>
-            <CardTitle>{dish.name}</CardTitle>
-            <CardText>{dish.description}</CardText>
-          </CardBody>
-        </Card>
-      );
+    if (dish != null) return <DishdetailComponent dish={dish} />;
     else return <div></div>;
   }
 
@@ -51,11 +43,15 @@ class Menu extends Component {
     return (
       <div className="container">
         <div className="row">{menu}</div>
-        <div className="row">
-          <div className="col-12 col-md-5 m-1">
-            {this.renderDish(this.state.selectedDish)}
+       
+          {/* <DishdetailComponent dish={this.state.selectedDish} /> */}
+          {this.renderDish(this.state.selectedDish)}
+        
+        {/* 
+          <div >
+            // {this.renderDish(this.state.selectedDish)}
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
