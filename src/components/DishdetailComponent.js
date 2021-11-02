@@ -9,6 +9,7 @@ import {
   BreadcrumbItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import CommentForm from './CommentFormComponent';
 
 function RenderDish({ dish }) {
   if (dish != null) {
@@ -52,6 +53,7 @@ function RenderComments({ comments }) {
             );
           })}
         </ul>
+            <CommentForm />
       </div>
     );
   }
